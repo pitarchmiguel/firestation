@@ -1,0 +1,17 @@
+---
+
+const menu = [
+  { name: "Bocadillos", url: "bocadillos" },
+  { name: "Platos Combinados", url: "platos" },
+  { name: "Postres", url: "postres" },
+  { name: "Bebidas", url: "bebidas" }
+];
+
+---
+
+<div class="comida">
+  {menu.map((item) => (
+    <div class="info-comida">
+      <a href={item.url}><h3>{item.name}</h3></a>
+    </div>
+  ))}

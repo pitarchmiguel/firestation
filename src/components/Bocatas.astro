@@ -1,0 +1,114 @@
+---
+const bocadillos = [
+    { name: "BenchPress", descripcion: "Pechuga, tomate, queso", price: 6.90, image: "https://go.nordqr.com/89p92c/2217a53a62c.webp" },
+    { name: "French fries", descripcion: "Golden and crispy potato fries, perfectly seasoned and fried until...", price: 6.90, image: "https://go.nordqr.com/89p92c/2217a53a62c.webp" },
+    { name: "Onion rings", descripcion: "Crispy onion rings dipped in a light batter and fried to golden perfection...", price: 7.50, image: "https://go.nordqr.com/89p92c/2217a53a62c.webp" },
+    { name: "Nachos", descripcion: "Crispy corn nachos topped with a mix of melted cheese, jalapeños, and spicy sauce...", price: 8.90, image: "https://go.nordqr.com/89p92c/2217a53a62c.webp" },
+];
+---
+
+<div class="contenedor">
+    <div class="carta">
+        <div class="navegacion">
+            <button class="atras"><a href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="32"  height="32"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a></button>
+        </div>
+        {bocadillos.map((item) => (
+            <div class="product-card">
+              <div class="product-info">
+                <h3 class="product-title">{item.name}</h3>
+                <p class="product-description">{item.descripcion}</p>
+                <p class="product-price">{item.price.toFixed(2)} €</p>
+              </div>
+              <div class="product-image">
+                <img src={item.image} alt={item.name} />
+              </div>
+            </div>
+          ))}
+          
+          
+    </div>
+</div>
+
+<style>
+.atras {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carta {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--gray_050);
+    position: relative;
+    box-shadow: var(--gray_400);
+
+    overflow: hidden;
+}
+
+@media (width >= 500px) {
+
+    .carta {
+        width: 400px;
+        height: 95vh;
+        border-radius: 20px;
+    }
+}
+/* Contenedor principal */
+.product-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 16px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Información del producto */
+.product-info {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 8px;
+  
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 12px;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+}
+
+/* Imagen del producto */
+.product-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+</style>
