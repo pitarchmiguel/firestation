@@ -51,13 +51,6 @@ const bocata = [
     grupo: "C"
   },
   {
-    name: "PC",
-    descripcion: "Jamón serrano ibérico, tomate y AOVE",
-    price: 6.50,
-    imagen: "",
-    grupo: "C"
-  },
-  {
     name: "SNACH",
     descripcion: "Pollo a la plancha, tomate seco, lechuga, cheddar, salsa pesto y mahonesa",
     price: 7.00,
@@ -99,6 +92,7 @@ const bocatasPorGrupo = bocata.reduce((grupos, bocata) => {
 
 <div class="contenedor">
     <div class="carta">
+      <div class="atras"><a href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a></div>
       {Object.keys(bocatasPorGrupo).map((grupo) => (
         <div class="grupo">
           <h2 class="grupo-title">Grupo {grupo}</h2>
@@ -124,6 +118,22 @@ const bocatasPorGrupo = bocata.reduce((grupos, bocata) => {
 </div>
 
 <style>
+
+.atras {
+  position: sticky;
+  top: 0;
+  width: 100%; /* Se ajusta al ancho del contenedor padre */
+  background-color: rgb(245, 245, 245); /* Fondo semitransparente (tomato con opacidad) */* Efecto de desenfoque */
+  z-index: 10; /* Asegura que esté sobre otros elementos */
+  padding: 10px; /* Espaciado interno */
+}
+
+.atras a {
+  display: block;
+  color: #333;
+  padding: 10px;
+}
+
 .grupo-title {
   font-size: 1rem;
   font-weight: bold;
@@ -203,5 +213,4 @@ const bocatasPorGrupo = bocata.reduce((grupos, bocata) => {
   border-radius: 8px;
   border: 1px solid #ddd;
 }
-
 </style>
