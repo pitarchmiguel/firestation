@@ -1,3 +1,5 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
 }
