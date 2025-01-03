@@ -92,7 +92,12 @@ const bocatasPorGrupo = bocata.reduce((grupos, bocata) => {
 
 <div class="contenedor">
     <div class="carta">
-      <div class="atras"><a href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a></div>
+      <div class="atras">
+        <a href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="36"  height="36"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left-dashed"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h6m3 0h1.5m3 0h.5" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg></a>
+      
+      <img class="logo" src="/public/images/logo_firestation.png" alt="logo" class="logo">
+      
+      </div>
       {Object.keys(bocatasPorGrupo).map((grupo) => (
         <div class="grupo">
           <h2 class="grupo-title">Grupo {grupo}</h2>
@@ -119,12 +124,24 @@ const bocatasPorGrupo = bocata.reduce((grupos, bocata) => {
 
 <style>
 
+.logo {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+}
+
+.logo img {
+  object-fit: cover;
+}
+
 .atras {
   position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   top: 0;
   width: 100%; /* Se ajusta al ancho del contenedor padre */
-  background-color: rgb(245, 245, 245); /* Fondo semitransparente (tomato con opacidad) */* Efecto de desenfoque */
-  z-index: 10; /* Asegura que esté sobre otros elementos */
+  background-color: rgb(255, 255, 255); /* Fondo semitransparente (tomato con opacidad) */* Efecto de desenfoque */* Asegura que esté sobre otros elementos */
   padding: 10px; /* Espaciado interno */
 }
 
